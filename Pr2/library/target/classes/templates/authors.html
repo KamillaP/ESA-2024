@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Authors</title>
+</head>
+<body>
+<h1>Authors</h1>
+<ul>
+    <th:block th:each="author : ${authors}">
+        <li th:text="${author.name} + ' (' + ${author.country} + ') '"></li>
+    </th:block>
+</ul>
+
+<form method="post" action="/addAuthor">
+    <input type="text" name="name" placeholder="Name" required />
+    <input type="text" name="country" placeholder="Country" required />
+    <button type="submit">Add Author</button>
+</form>
+</body>
+</html>

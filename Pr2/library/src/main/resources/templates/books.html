@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+</head>
+<body>
+<h1>Books</h1>
+<ul>
+    <th:block th:each="book : ${books}">
+        <li th:text="${book.title} + ' (' + ${book.genre} + ') by ' + ${book.author.name}"></li>
+    </th:block>
+</ul>
+
+<form method="post" action="/addBook">
+    <input type="text" name="title" placeholder="Title" required />
+    <input type="text" name="genre" placeholder="Genre" required />
+    <input type="number" name="authorId" placeholder="Author ID" required />
+    <button type="submit">Add Book</button>
+</form>
+</body>
+</html>
